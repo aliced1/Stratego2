@@ -17,7 +17,7 @@ public class Main {
 			Scanner s = new Scanner(System.in);
 			Board b = new Board();
 			Processor p = new Processor(b);
-			CLI userInterface = new CLI(p);
+			CLI userInterface = new CLI(p, b);
 			userInterface.start();
 
 		}

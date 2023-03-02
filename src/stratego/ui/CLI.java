@@ -12,12 +12,13 @@ public class CLI {
 	protected Scanner scanner;
 	
 	
-	public CLI(Processor p) {
+	public CLI(Processor p, Board b) {
 		this.processor = p;
+		this.board = b;
 	}
 	
 	public static void printException(Exception e) {
-		System.out.println(e);
+		e.printStackTrace();
 	}
 	
 	
@@ -54,13 +55,13 @@ public class CLI {
 				
 				if ((i == 4 || i == 5) &&
 					(j == 2 || j == 3 || j == 6 || j == 7)) {
-					System.out.print("_\u2593_|");
+					System.out.print("__\u2593__|");
 					continue;
 				}
 				
 				
 				//TODO pull actual data from board
-				System.out.print("_" + "A\u0332" + "_|");
+				System.out.print("_" + board.getPieceAt(i, j) + "_|");
 			}
 			
 			System.out.println();
