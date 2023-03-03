@@ -5,6 +5,7 @@ import java.util.HashSet;
 
 import stratego.util.Piece;
 
+// Singleton pattern
 public class Board {
 	
 	private Piece[][] gameBoard;
@@ -13,7 +14,9 @@ public class Board {
 	private HashSet<Piece> blueRemainingPieces;
 //	private HashSet<Piece> blueCapturedPieces;
 	
-	public Board() throws Exception {
+	private static Board singleInstance = new Board();
+	
+	private Board() {
 		gameBoard = new Piece[10][10];
 		for (Piece[] row : gameBoard) {
 			Arrays.fill(row, new Piece("   "));
@@ -22,12 +25,13 @@ public class Board {
 		this.blueRemainingPieces = new HashSet<Piece>();
 	}
 	
+	public static Board getInstance() {
+		return singleInstance;
+	}
 	
-	public void placePiece(Piece p, int x, int y) {
-		
-		//TODO add check for outside board space
-		//TODO add check for null piece
-		
+	
+	public void placePiece(Piece p, int x, int y) throws Exception {
+		if (x < 0 || y < 0 || x > 10 || y > 10 || p == null) throw new IllegalArgumentException();
 		gameBoard[x][y] = p;
 	}
 	

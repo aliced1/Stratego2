@@ -19,8 +19,8 @@ public class Piece {
 	//TODO store available move lengths to display possible moves?
 
 	
-	public Piece (String r) throws Exception {
-		if (!strengths.containsKey(r)) throw new IllegalArgumentException();
+	public Piece (String r) {
+//		if (!strengths.containsKey(r)) throw new IllegalArgumentException();
 		this.rank = r;
 	}
 
@@ -33,6 +33,12 @@ public class Piece {
 	@Override
 	public String toString () {
 		return this.rank.substring(0, 3);
+	}
+	
+	public Piece battle(Piece opponent) {
+		if (this.getStrength() > opponent.getStrength()) return this;
+		else if (this.getStrength() < opponent.getStrength()) return opponent;
+		else return new Piece("   ");
 	}
 	
 

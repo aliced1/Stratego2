@@ -15,7 +15,7 @@ public class Main {
 		
 		try {
 			Scanner s = new Scanner(System.in);
-			Board b = new Board();
+			Board b = Board.getInstance();
 			Processor p = new Processor(b);
 			CLI userInterface = new CLI(p, b);
 			userInterface.start();

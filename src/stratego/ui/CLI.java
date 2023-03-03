@@ -7,9 +7,9 @@ import stratego.processor.Processor;
 
 public class CLI {
 	
-	protected Board board;
-	protected Processor processor;
-	protected Scanner scanner;
+	private Board board;
+	private Processor processor;
+	private Scanner scanner;
 	
 	
 	public CLI(Processor p, Board b) {
@@ -59,15 +59,10 @@ public class CLI {
 					continue;
 				}
 				
-				
-				//TODO pull actual data from board
 				System.out.print("_" + board.getPieceAt(i, j) + "_|");
 			}
 			
 			System.out.println();
-//			System.out.print(" |___|___|___|___|___|___|___|___|___|___|");
-//			System.out.println();
-
 		}
 	}
 	

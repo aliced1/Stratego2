@@ -37,7 +37,7 @@ public class Processor {
 		for (int i = 0; i < 6; i++) board.createAndAddPiece("BOM");
 	}
 	
-	private void placePiecesRandomly() {
+	private void placePiecesRandomly() throws Exception {
 		// create list of pieces from set, shuffle, create iterator, iterate over board and place
 		List<Piece> listForShuffle = new ArrayList<Piece>(board.getCurrentPieces("red"));
 		Collections.shuffle(listForShuffle);
