@@ -35,6 +35,9 @@ public class StrategoGame extends ApplicationAdapter {
 		cursor.setPosition(0, 0);
 
 
+		// test
+
+
 //		Gdx.graphics.setWindowedMode(800, 800);
 
 		float w = Gdx.graphics.getWidth();
