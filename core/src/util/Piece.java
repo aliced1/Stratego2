@@ -24,9 +24,9 @@ public class Piece extends Actor {
     // Sprite instance variables
     private Texture image;
 
-
-    public Piece (String r) {
-//		if (!strengths.containsKey(r)) throw new IllegalArgumentException();
+    public Piece (String r, String texturePath) {
+		if (!strengths.containsKey(r) || texturePath == null) throw new IllegalArgumentException();
+        setTexture(new Texture(texturePath));
         rank = r;
     }
 
@@ -42,7 +42,7 @@ public class Piece extends Actor {
     public Piece battle(Piece opponent) {
         if (getStrength() > opponent.getStrength()) return this;
         else if (getStrength() < opponent.getStrength()) return opponent;
-        else return new Piece("   ");
+        else return new Piece("   ", "white.png");
     }
 
 

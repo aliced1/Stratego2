@@ -11,17 +11,6 @@ import ui.StrategoGame;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 
-		try {
-			Board b = Board.getInstance();
-			processor.Processor p = new Processor(b);
-			CLI userInterface = new CLI(b);
-			userInterface.start();
-
-		}
-		catch (Exception e) {
-			CLI.printException(e);
-		}
-
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60);
 		config.setTitle("stratego");

@@ -10,6 +10,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import data.Board;
+import processor.Processor;
 
 public class StrategoGame extends ApplicationAdapter {
 	private SpriteBatch batch;
@@ -48,6 +50,18 @@ public class StrategoGame extends ApplicationAdapter {
 
 		squaresOnWidth = 10;
 		squaresOnHeight = 10;
+
+
+		try {
+			Board b = Board.getInstance();
+			processor.Processor p = new Processor(b);
+			CLI userInterface = new CLI(b);
+			userInterface.start();
+
+		}
+		catch (Exception e) {
+			CLI.printException(e);
+		}
 	}
 
 	@Override

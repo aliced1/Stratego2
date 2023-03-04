@@ -21,19 +21,19 @@ public class Processor {
     //TODO remove pieces from player's pool
 
     private void createInitialPieces() throws Exception {
-        board.createAndAddPiece("Marshal");
-        board.createAndAddPiece("General");
-        board.createAndAddPiece("Spy");
-        board.createAndAddPiece("FLA");
+        board.createAndAddPiece("Marshal", "Marshal.png");
+        board.createAndAddPiece("General", "General.png");
+        board.createAndAddPiece("Spy", "Spy.png");
+        board.createAndAddPiece("FLA", "flag.jpg");
 
-        for (int i = 0; i < 2; i++) board.createAndAddPiece("Colonel");
-        for (int i = 0; i < 3 ; i++) board.createAndAddPiece("Major");
-        for (int i = 0; i < 4; i++) board.createAndAddPiece("Captain");
-        for (int i = 0; i < 4; i++) board.createAndAddPiece("Lieutenant");
-        for (int i = 0; i < 4; i++) board.createAndAddPiece("Sergeant");
-        for (int i = 0; i < 5; i++) board.createAndAddPiece("Miner");
-        for (int i = 0; i < 8; i++) board.createAndAddPiece("Scout");
-        for (int i = 0; i < 6; i++) board.createAndAddPiece("BOM");
+        for (int i = 0; i < 2; i++) board.createAndAddPiece("Colonel", "Colonel.png");
+        for (int i = 0; i < 3 ; i++) board.createAndAddPiece("Major", "Major.png");
+        for (int i = 0; i < 4; i++) board.createAndAddPiece("Captain", "Captain.png");
+        for (int i = 0; i < 4; i++) board.createAndAddPiece("Lieutenant", "Lieutenant.png");
+        for (int i = 0; i < 4; i++) board.createAndAddPiece("Sergeant", "Sergeant.png");
+        for (int i = 0; i < 5; i++) board.createAndAddPiece("Miner", "Miner.png");
+        for (int i = 0; i < 8; i++) board.createAndAddPiece("Scout", "Scout.png");
+        for (int i = 0; i < 6; i++) board.createAndAddPiece("BOM", "Bomb.png");
     }
 
     private void placePiecesRandomly() throws Exception {

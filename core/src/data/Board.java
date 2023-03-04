@@ -19,7 +19,7 @@ public class Board {
     private Board() {
         gameBoard = new Piece[10][10];
         for (Piece[] row : gameBoard) {
-            Arrays.fill(row, new Piece("   "));
+            Arrays.fill(row, new Piece("   ", "white.png"));
         }
         this.redRemainingPieces = new HashSet<Piece>();
         this.blueRemainingPieces = new HashSet<Piece>();
@@ -40,9 +40,9 @@ public class Board {
         return this.gameBoard[x][y];
     }
 
-    public void createAndAddPiece(String r) {
-        this.redRemainingPieces.add(new Piece(r));
-        this.blueRemainingPieces.add(new Piece(r));
+    public void createAndAddPiece(String r, String texturePath) {
+        this.redRemainingPieces.add(new Piece(r, texturePath));
+        this.blueRemainingPieces.add(new Piece(r, texturePath));
     }
 
     public HashSet<Piece> getCurrentPieces(String color) {
