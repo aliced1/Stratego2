@@ -18,8 +18,7 @@ public class Processor {
         this.placePiecesRandomly();
     }
 
-
-    //TODO piece battling, removing
+    //TODO remove pieces from player's pool
 
     private void createInitialPieces() throws Exception {
         board.createAndAddPiece("Marshal");
@@ -31,7 +30,7 @@ public class Processor {
         for (int i = 0; i < 3 ; i++) board.createAndAddPiece("Major");
         for (int i = 0; i < 4; i++) board.createAndAddPiece("Captain");
         for (int i = 0; i < 4; i++) board.createAndAddPiece("Lieutenant");
-        for (int i = 0; i < 4; i++) board.createAndAddPiece("Seregant");
+        for (int i = 0; i < 4; i++) board.createAndAddPiece("Sergeant");
         for (int i = 0; i < 5; i++) board.createAndAddPiece("Miner");
         for (int i = 0; i < 8; i++) board.createAndAddPiece("Scout");
         for (int i = 0; i < 6; i++) board.createAndAddPiece("BOM");
