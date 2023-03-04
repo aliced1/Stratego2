@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.7">
+      <module name="Stratego2.core" target="1.9" />
+      <module name="Stratego2.core.main" target="1.9" />
+      <module name="Stratego2.core.test" target="1.9" />
+      <module name="Stratego2.desktop" target="1.9" />
+      <module name="Stratego2.desktop.main" target="1.9" />
+      <module name="Stratego2.desktop.test" target="1.9" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
