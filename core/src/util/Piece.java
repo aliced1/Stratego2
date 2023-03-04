@@ -1,9 +1,12 @@
 package util;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class Piece {
+public class Piece extends Actor {
 
     private static final HashMap<String, Integer> strengths = new HashMap<>(Map.of("Marshal", 10, "General", 9,
             "Colonel", 8, "Major", 7, "Captain", 6, "Lieutenant", 5, "Seregant", 4,
@@ -14,17 +17,17 @@ public class Piece {
         strengths.put("FLA", 0);
     }
 
-
-    private final String rank;
     //TODO store available move lengths to display possible moves?
+    private final String rank;
+
+    // Sprite instance variables
+    private Texture image;
 
 
     public Piece (String r) {
 //		if (!strengths.containsKey(r)) throw new IllegalArgumentException();
         this.rank = r;
     }
-
-
 
     public Integer getStrength() {
         return Piece.strengths.get(this.rank);
@@ -40,6 +43,12 @@ public class Piece {
         else if (this.getStrength() < opponent.getStrength()) return opponent;
         else return new Piece("   ");
     }
+
+
+
+    // Sprite methods
+
+
 
 
 

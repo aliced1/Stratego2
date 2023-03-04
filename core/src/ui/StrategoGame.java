@@ -1,4 +1,4 @@
-package com.stratego.game;
+package ui;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Input;
@@ -14,11 +14,13 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 public class StrategoGame extends ApplicationAdapter {
 	private SpriteBatch batch;
 	private Texture img;
-	private OrthographicCamera camera;
+//	private OrthographicCamera camera;
 	private Sprite gridSquare;
 	private Sprite gridLake;
 	private int squaresOnWidth;
 	private int squaresOnHeight;
+	private float width;
+	private float height;
 
 	private Sprite cursor;
 
@@ -34,19 +36,15 @@ public class StrategoGame extends ApplicationAdapter {
 		cursor.setScale(0.1f);
 		cursor.setPosition(0, 0);
 
-
-		// test
-
-
 //		Gdx.graphics.setWindowedMode(800, 800);
 
-		float w = Gdx.graphics.getWidth();
-		float h = Gdx.graphics.getHeight();
+		width = Gdx.graphics.getWidth();
+		height = Gdx.graphics.getHeight();
 
-		camera = new OrthographicCamera(w, h);
+//		camera = new OrthographicCamera(w, h);
 
-		camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight / 2f, 0);
-		camera.update();
+//		camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight / 2f, 0);
+//		camera.update();
 
 		squaresOnWidth = 10;
 		squaresOnHeight = 10;
@@ -66,8 +64,10 @@ public class StrategoGame extends ApplicationAdapter {
 		Gdx.gl.glClearColor(0.8f, 0.8f, 1, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-		float squareWidth = camera.viewportWidth / squaresOnWidth;
-		float squareHeight = camera.viewportHeight / squaresOnHeight;
+//		float squareWidth = camera.viewportWidth / squaresOnWidth;
+//		float squareHeight = camera.viewportHeight / squaresOnHeight;
+		float squareWidth = width / squaresOnWidth;
+		float squareHeight = height / squaresOnHeight;
 		gridSquare.setSize(squareWidth, squareHeight);
 		gridLake.setSize(squareWidth, squareHeight);
 
