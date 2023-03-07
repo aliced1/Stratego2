@@ -6,8 +6,10 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.utils.DragAndDrop;
+import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 import com.badlogic.gdx.Gdx;
@@ -85,8 +87,7 @@ public class StrategoGame extends ApplicationAdapter {
 				p.setPosition(i * squareHeight, j * squareWidth);
 				p.setSize(squareWidth, squareHeight);
 				p.setZIndex(2);
-				p.setName(Integer.toString(i) + Integer.toString(j));
-				System.out.println("Name = " + p.getName() + "     coordinates = " + p.getX() + ", " + p.getY() + "     Z-level = " + p.getZIndex());
+//				System.out.println("Name = " + p.getName() + "     coordinates = " + p.getX() + ", " + p.getY() + "     Z-level = " + p.getZIndex());
 			}
 		}
 	}
