@@ -2,7 +2,6 @@ package data;
 
 import util.Piece;
 
-import java.util.Arrays;
 import java.util.HashSet;
 
 // Singleton pattern
@@ -18,8 +17,11 @@ public class Board {
 
     private Board() {
         gameBoard = new Piece[10][10];
-        for (Piece[] row : gameBoard) {
-            Arrays.fill(row, new Piece("   ", "white.png"));
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++){
+                Piece p = new Piece("   ", "white.png");
+                gameBoard[i][j] = p;
+            }
         }
         this.redRemainingPieces = new HashSet<Piece>();
         this.blueRemainingPieces = new HashSet<Piece>();

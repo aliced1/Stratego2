@@ -20,7 +20,7 @@ public class Processor {
 
     //TODO remove pieces from player's pool
 
-    private void createInitialPieces() throws Exception {
+    private void createInitialPieces() {
         board.createAndAddPiece("Marshal", "Marshal.png");
         board.createAndAddPiece("General", "General.png");
         board.createAndAddPiece("Spy", "Spy.png");
@@ -36,13 +36,13 @@ public class Processor {
         for (int i = 0; i < 6; i++) board.createAndAddPiece("BOM", "Bomb.png");
     }
 
-    private void placePiecesRandomly() throws Exception {
+    private void placePiecesRandomly() {
         // create list of pieces from set, shuffle, create iterator, iterate over board and place
         List<Piece> listForShuffle = new ArrayList<Piece>(board.getCurrentPieces("red"));
         Collections.shuffle(listForShuffle);
         Iterator<Piece> it = listForShuffle.iterator();
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < 4; j++) {
+            for (int i = 0; i < 10; i++) {
                 board.placePiece(it.next(), i, j);
             }
         }
@@ -50,8 +50,8 @@ public class Processor {
         listForShuffle = new ArrayList<Piece>(board.getCurrentPieces("blue"));
         Collections.shuffle(listForShuffle);
         it = listForShuffle.iterator();
-        for (int i = 6; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
+        for (int j = 6; j < 10; j++) {
+            for (int i = 0; i < 10; i++) {
                 board.placePiece(it.next(), i, j);
             }
         }

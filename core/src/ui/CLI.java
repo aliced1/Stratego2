@@ -1,8 +1,6 @@
 package ui;
 
-import java.util.Scanner;
 import data.Board;
-import processor.Processor;
 
 public class CLI {
 
@@ -22,7 +20,7 @@ public class CLI {
      * Simple starter method to kick off the CLI
      * @throws Exception
      */
-    public void start() throws Exception {
+    public void start() {
         System.out.println("Welcome to Stratego! (command line interface)");
         printBoard();
     }
@@ -31,17 +29,14 @@ public class CLI {
      * Prints current board state
      */
     private void printBoard() {
-        System.out.println("   0   1   2   3   4   5   6   7   8   9");
-        System.out.println("  _______________________________________");
+        for (int j = 9; j >= 0; j--) {
+            System.out.print(j + " |");
 
-        for (int i = 0; i < 10; i++) {
-            System.out.print(i + "|");
+            for (int i = 0; i < 10; i++) {
 
-            for (int j = 0; j < 10; j++) {
-
-                if ((i == 4 || i == 5) &&
-                        (j == 2 || j == 3 || j == 6 || j == 7)) {
-                    System.out.print("__▓__|");
+                if ((j == 4 || j == 5) &&
+                        (i == 2 || i == 3 || i == 6 || i == 7)) {
+                    System.out.print("__X__|");
                     continue;
                 }
 
@@ -50,6 +45,7 @@ public class CLI {
 
             System.out.println();
         }
+        System.out.println("    0     1     2     3     4     5     6     7     8     9");
     }
 
 

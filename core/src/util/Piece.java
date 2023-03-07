@@ -2,6 +2,7 @@ package util;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 import java.util.HashMap;
@@ -22,17 +23,19 @@ public class Piece extends Actor {
     private final String rank;
 
     // Sprite instance variables
-    private Texture image;
+    private final Sprite s;
 
     public Piece (String r, String texturePath) {
 		if (!strengths.containsKey(r) || texturePath == null) throw new IllegalArgumentException();
-        setTexture(new Texture(texturePath));
+        s = new Sprite(new Texture(texturePath));
         rank = r;
     }
 
     public Integer getStrength() {
         return Piece.strengths.get(rank);
     }
+
+    public String getRank() { return rank; }
 
     @Override
     public String toString () {
@@ -48,18 +51,18 @@ public class Piece extends Actor {
 
 
     // Sprite methods
-    public void setTexture (Texture t) {
-        image = t;
+    @Override
+    public void draw(Batch b, float parentAlpha) {
+        s.draw(b);
     }
 
-    public Texture getTexture () {
-        return image;
+    public void setSize (float x, float y) {
+        s.setSize(x, y);
     }
 
-    public void draw(Batch b) {
-        b.draw(getTexture(), getX(), getY());
+    public void setPosition (float x, float y) {
+        s.setPosition(x, y);
     }
-
 
 
 
